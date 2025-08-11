@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PG – Concursos Públicos</title>
+  <meta name="description" content="Materiais, amostras e links da PG – Concursos Públicos." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">PG</div>
+      <div class="brand-text">
+        <h1>PG – Concursos Públicos</h1>
+        <p>Materiais oficiais • Amostras • Validação por likes</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input id="search" class="input" type="search" placeholder="Buscar material..." autocomplete="off" />
+      <select id="category" class="input">
+        <option value="">Todas as categorias</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="status" class="status" aria-live="polite"></section>
+
+    <section id="lists" class="lists">
+      <!-- categorias/materiais renderizados via JS -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>
+      © <span id="year"></span> PG – Concursos Públicos •
+      Feito com foco em performance e acessibilidade.
+    </small>
+  </footer>
+
+  <template id="tpl-category">
+    <details class="category" open>
+      <summary class="cat-head">
+        <span class="cat-name"></span>
+        <span class="cat-count" aria-label="quantidade"></span>
+      </summary>
+      <div class="items"></div>
+    </details>
+  </template>
+
+  <template id="tpl-item">
+    <article class="item-card" data-id="">
+      <div class="item-main">
+        <h3 class="item-title"></h3>
+        <p class="item-meta"></p>
+      </div>
+      <div class="item-actions">
+        <a class="btn ghost" target="_blank" rel="noopener" data-kind="sample">Amostra</a>
+        <a class="btn primary" target="_blank" rel="noopener" data-kind="buy">Comprar</a>
+        <button class="btn like" type="button" aria-pressed="false" data-liked="false">
+          <span class="heart" aria-hidden="true">♥</span>
+          <span class="like-count">0</span>
+        </button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
