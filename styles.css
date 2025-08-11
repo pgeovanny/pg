@@ -139,3 +139,28 @@ body{
                      var(--bg);}
   .category, .item-card{box-shadow:var(--shadow)}
 }
+/* ... (mantenha o CSS anterior) ... */
+
+/* Modal */
+.modal{
+  position:fixed; inset:0; display:grid; place-items:center;
+  background:rgba(0,0,0,.5);
+}
+.modal[hidden]{display:none}
+.modal-box{
+  width:min(560px, 92vw);
+  background:var(--panel);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px; padding:20px; box-shadow:var(--shadow)
+}
+.modal-close{
+  position:absolute; right:18px; top:12px; background:transparent; border:none; color:var(--text);
+  font-size:22px; cursor:pointer
+}
+.m-sub{color:var(--muted); margin-top:0}
+.m-actions{display:flex; gap:10px; margin:10px 0 12px}
+.m-label{display:flex; flex-direction:column; gap:6px; margin:8px 0 14px}
+#m-reason{
+  background:var(--panel-2); color:var(--text);
+  border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:10px;
+}
