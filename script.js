@@ -2,7 +2,7 @@
 /** PUBLICAR seu Apps Script como Web App e colar as URLs abaixo.
  *  Sugestão: usar a MESMA URL e trocar por ação via query: ?action=list / POST action=like
  */
-const SHEETS_API_BASE = "https://script.google.com/macros/s/SEU_WEB_APP_ID/exec"; // TODO
+const SHEETS_API_BASE = "https://script.google.com/macros/s/AKfycbxaA9y-kGcS3Sb0JtxktH92v-Y3id9vJbXggDoC20tZ9QFdCtcx0f0GOb5Hgzm2-0aa/exec"; // TODO
 const ENDPOINT_LIST = `${SHEETS_API_BASE}?action=list`;
 const ENDPOINT_LIKE = `${SHEETS_API_BASE}?action=like`;
 
