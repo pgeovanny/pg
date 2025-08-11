@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PG – Concursos Públicos</title>
-  <meta name="description" content="Materiais, amostras e links da PG – Concursos Públicos." />
+  <meta name="description" content="Materiais oficiais • Amostras • Validação por likes" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
@@ -15,10 +15,9 @@
       <div class="logo">PG</div>
       <div class="brand-text">
         <h1>PG – Concursos Públicos</h1>
-        <p>Materiais oficiais • Amostras • Validação por likes</p>
+        <p>Materiais • Amostras • Métricas de qualidade</p>
       </div>
     </div>
-
     <div class="controls">
       <input id="search" class="input" type="search" placeholder="Buscar material..." autocomplete="off" />
       <select id="category" class="input">
@@ -29,24 +28,19 @@
 
   <main class="container">
     <section id="status" class="status" aria-live="polite"></section>
-
-    <section id="lists" class="lists">
-      <!-- categorias/materiais renderizados via JS -->
-    </section>
+    <section id="lists" class="lists"></section>
   </main>
 
   <footer class="site-footer">
-    <small>
-      © <span id="year"></span> PG – Concursos Públicos •
-      Feito com foco em performance e acessibilidade.
-    </small>
+    <small>© <span id="year"></span> PG – Concursos Públicos</small>
   </footer>
 
+  <!-- Templates -->
   <template id="tpl-category">
     <details class="category" open>
       <summary class="cat-head">
         <span class="cat-name"></span>
-        <span class="cat-count" aria-label="quantidade"></span>
+        <span class="cat-count"></span>
       </summary>
       <div class="items"></div>
     </details>
@@ -59,8 +53,8 @@
         <p class="item-meta"></p>
       </div>
       <div class="item-actions">
-        <a class="btn ghost" target="_blank" rel="noopener" data-kind="sample">Amostra</a>
-        <a class="btn primary" target="_blank" rel="noopener" data-kind="buy">Comprar</a>
+        <a class="btn ghost btn-sample" target="_blank" rel="noopener">Amostra</a>
+        <a class="btn primary btn-buy" target="_blank" rel="noopener">Comprar</a>
         <button class="btn like" type="button" aria-pressed="false" data-liked="false">
           <span class="heart" aria-hidden="true">♥</span>
           <span class="like-count">0</span>
@@ -68,6 +62,24 @@
       </div>
     </article>
   </template>
+
+  <!-- Modal de feedback -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="m-title">
+      <button class="modal-close" aria-label="Fechar">×</button>
+      <h2 id="m-title">O que achou da amostra?</h2>
+      <p class="m-sub">Seu feedback ajuda a melhorar os materiais.</p>
+      <div class="m-actions">
+        <button class="btn m-like" data-sentiment="like">👍 Gostei</button>
+        <button class="btn ghost m-dislike" data-sentiment="dislike">👎 Não curti</button>
+      </div>
+      <label class="m-label">
+        Motivo (opcional)
+        <textarea id="m-reason" rows="3" placeholder="O que poderíamos melhorar?"></textarea>
+      </label>
+      <button class="btn primary m-send">Enviar feedback</button>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
 </body>
